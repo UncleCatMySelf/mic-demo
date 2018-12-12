@@ -8,4 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * Created by MySelf on 2018/12/12.
  */
 public interface UserRepository extends JpaRepository<User, Integer> {
+
+    Integer countById(Integer id);
+
 }

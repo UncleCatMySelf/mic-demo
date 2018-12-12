@@ -9,4 +9,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface GoodsRepository extends JpaRepository<Goods, String> {
 
+    Integer countByGoodsId(String id);
+
 }

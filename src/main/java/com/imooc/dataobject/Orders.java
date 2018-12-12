@@ -18,8 +18,7 @@ import java.util.Date;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@DynamicInsert
-public class Order {
+public class Orders {
 
     /** 订单号 */
     @Id
