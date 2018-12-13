@@ -13,13 +13,11 @@ import com.imooc.utils.ResultVOUtil;
 import com.imooc.vo.ResultVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by MySelf on 2018/12/12.
@@ -43,12 +41,15 @@ public class OrderController {
     //下单
     @PostMapping("/order")
     public ResultVO order(@RequestParam("id") Integer id,@RequestParam("goodsId") String goodsId, @RequestParam("num") Integer num){
+        //判断用户是否存在
         if(userRepository.countById(id) == 0){
             return ResultVOUtil.error(444,"用户不存在");
         }
+        //判断商品是否存在
         if(goodsRepository.countByGoodsId(goodsId) == 0){
             return ResultVOUtil.error(445,"商品不存在");
         }
+        //库存是否足够
         Inventory inventory = inventoryRepository.findByGoodsId(goodsId);
         if ((inventory.getInventoryNum() - num) < 0){
             return ResultVOUtil.error(446,"库存不足");
@@ -66,5 +67,16 @@ public class OrderController {
     }
 
     //查询订单
+    @GetMapping("/order")
+    public ResultVO order(@RequestParam("id") Integer id){
+        //判断用户是否存在
+        if(userRepository.countById(id) == 0){
+            return ResultVOUtil.error(444,"用户不存在");
+        }
+        User user = userRepository.getOne(id);
+        //根据用户信息查询订单列表
+        List<Orders> orders = orderRepository.findAllByName(user.getName());
+        return ResultVOUtil.success(orders);
+    }
 
 }
