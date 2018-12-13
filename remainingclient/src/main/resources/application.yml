@@ -4,6 +4,6 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 spring:
   application:
-    name: order-client
+    name: remaining-client
 server:
-  port: 8762
+  port: 8763
