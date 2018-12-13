@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
- * 库存表 Bean
+ * 库存表DTO
  * Created by MySelf on 2018/12/12.
  */
 @Data

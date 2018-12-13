@@ -24,6 +24,7 @@ public class OrderController {
     @Autowired
     private OrderRepository orderRepository;
 
+    /** 通信对象 */
     @Autowired
     private RemainingClient remainingClient;
 
