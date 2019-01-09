@@ -10,7 +10,10 @@
 
 - [第一章 从传统单体架构走向微服务](https://v.qq.com/x/page/a0823ubv3go.html)
 - [第二章 传统单体电商架构](https://v.qq.com/x/page/s08232tui1k.html)
-- 待更新
+- [第三章 SpringCloud入门](https://v.qq.com/x/page/y0824ml25mf.html)
+- [第四章 Eureka实操与微服务架构搭建](https://v.qq.com/x/page/u0824re4gtm.html)
+- [第五章 服务拆分和应用间通信](https://v.qq.com/x/page/q0824eew6pq.html)
+- [第六章 微服务的不解和深入探讨](https://v.qq.com/x/page/f0824swjmtq.html)
 
 
 ## 第一章 从传统单体架构走向微服务
